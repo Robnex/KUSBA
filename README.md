@@ -91,8 +91,14 @@ cd ~
 sudo wget https://raw.githubusercontent.com/xbst/KUSBA/main/Firmware/v2/adxlmcu.cfg
 ```
 Mainsail: (or if config files are in klipper_config instead of home)
+(old Klipper Versions)
 ```
 cd klipper_config
+sudo wget https://raw.githubusercontent.com/xbst/KUSBA/main/Firmware/v2/adxlmcu.cfg
+```
+New Klipper Versions
+```
+cd printer_data/config
 sudo wget https://raw.githubusercontent.com/xbst/KUSBA/main/Firmware/v2/adxlmcu.cfg
 ```
 3. Find your MCU address.
@@ -100,9 +106,12 @@ sudo wget https://raw.githubusercontent.com/xbst/KUSBA/main/Firmware/v2/adxlmcu.
 ls /dev/serial/by-id/*
 ```
 4. Edit the adxlmcu.cfg file. Change the MCU serial address and the probe points.
+Putty
 ```
 sudo nano adxlmcu.cfg
 ```
+Weboverlay:
+Machine -> Config -> adxlmcu.cfg
 5. Add the following to your printer.cfg:
 ```
 [include adxlmcu.cfg]
